@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Detalle de Familias</h2>
+    <div class="card p-3 shadow-sm">
+        <div class="d-flex flex-column gap-2">
+            <span><strong>Nombre:</strong> {{ object.nombre }}</span>
+            <span><strong>Dirección:</strong> {{ object.direccion }}</span>
+            <span><strong>Condiciones Socioeconómicas:</strong> {{ object.condiciones_socioeconomicas }}</span>
+            <span><strong># Integrantes:</strong> {{ object.numero_integrantes }}</span>
+        </div>
+    </div>
+    <a href="{% url 'familia_update' object.id %}" class="btn btn-primary mt-3">Editar</a>
+    <a href="{% url 'familia_delete' object.id %}" class="btn btn-danger mt-3">Eliminar</a>
+    <a href="{% url 'familia_list' %}" class="btn btn-secondary mt-3">Volver</a>
+{% endblock %}

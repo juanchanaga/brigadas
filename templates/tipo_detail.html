@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Detalle de Tipos de Ayuda</h2>
+    <div class="card p-3 shadow-sm">
+        <div class="d-flex flex-column gap-2">
+            <span><strong>Tipo:</strong> {{ object.nombre }}</span>
+            <span><strong>Descripción:</strong> {{ object.descripcion }}</span>
+        </div>
+    </div>
+    <a href="{% url 'tipo_update' object.id %}" class="btn btn-primary mt-3">Editar</a>
+    <a href="{% url 'tipo_delete' object.id %}" class="btn btn-danger mt-3">Eliminar</a>
+    <a href="{% url 'tipo_list' %}" class="btn btn-secondary mt-3">Volver</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Detalle de Seguimientos</h2>
+    <div class="card p-3 shadow-sm">
+        <div class="d-flex flex-column gap-2">
+            <span><strong>Fecha Seguimiento:</strong> {{ object.fecha }}</span>
+            <span><strong>Familia:</strong> {{ object.familia }}</span>
+            <span><strong>Evaluación:</strong> {{ object.evaluacion_impacto }}</span>
+            <span><strong>Comentarios:</strong> {{ object.comentarios }}</span>
+        </div>
+    </div>
+    <a href="{% url 'seguimiento_update' object.id %}" class="btn btn-primary mt-3">Editar</a>
+    <a href="{% url 'seguimiento_delete' object.id %}" class="btn btn-danger mt-3">Eliminar</a>
+    <a href="{% url 'seguimiento_list' %}" class="btn btn-secondary mt-3">Volver</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="d-flex flex-row gap-4">
+        <h2>Tipos de Ayuda</h2>
+        <a href="{% url 'tipo_create' %}" class="btn btn-success mb-3">Agregar</a>
+    </div>
+    <div class="row mt-5">
+        {% for obj in object_list %}
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow-sm">
+                    <h5>{{ obj }}</h5>
+                    <span class="mb-2">{{ obj.descripcion }}</span>
+                    <a href="{% url 'tipo_detail' obj.id %}" class="btn btn-outline-primary btn-sm">Ver</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

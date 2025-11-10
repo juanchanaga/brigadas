@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Detalle de Voluntarios</h2>
+    <div class="card p-3 shadow-sm">
+        <div class="d-flex flex-column gap-2">
+            <span><strong>Nombre:</strong> {{ object.nombre }}</span>
+            <span><strong>Rol:</strong> {{ object.rol }}</span>
+            <span><strong># Contacto:</strong> {{ object.contacto }}</span>
+        </div>
+    </div>
+    <a href="{% url 'voluntario_update' object.id %}" class="btn btn-primary mt-3">Editar</a>
+    <a href="{% url 'voluntario_delete' object.id %}" class="btn btn-danger mt-3">Eliminar</a>
+    <a href="{% url 'voluntario_list' %}" class="btn btn-secondary mt-3">Volver</a>
+{% endblock %}
